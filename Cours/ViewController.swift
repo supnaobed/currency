@@ -35,7 +35,6 @@ class ViewController: UITableViewController {
                 return just(exvhangeVMs)
             }
             .subscribe {
-
                 if $0.element != nil {
                     self.exchangies = ($0.element)!
                     self.tableView.reloadData()

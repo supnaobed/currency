@@ -17,7 +17,7 @@ class CoursController: UITabBarController {
         self.tabBar.items![0].image = UIImage(named: "bag.png")
         self.tabBar.items![1].image = UIImage(named: "banknote.png")
         self.tabBar.items![0].title = "Курсы банков"
-        self.tabBar.items![1].title = "Курсы банков"
+        self.tabBar.items![1].title = "Курсы ЦБ"
 
     }
 

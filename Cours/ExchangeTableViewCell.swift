@@ -24,7 +24,6 @@ class ExchangeTableViewCell: UITableViewCell{
             usdBuyLabel.text = String(viewModel.usdBuy)
             eurBuyLabel.text = String(viewModel.eurBuy)
             eurSellLabel.text = String(viewModel.eurSell)
-
         }
     }
     
