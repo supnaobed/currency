@@ -18,7 +18,7 @@ class CurrencyTableViewModel: CurrencyViewModel {
     let changed: Float
     let order: Int
 
-    init(_ currency: CbrCurrency){
+    init(currency: CbrCurrency){
         self.currency = currency
         self.charCode = currency.charCode
         self.nominal = currency.nominal

@@ -26,7 +26,7 @@ class CbrCurrViewController: UITableViewController {
                 let currencyList = Mapper<CbrCurrencyList>().map(request.1)
                 var currencyVMs = [CurrencyTableViewModel]()
                 for currency in (currencyList?.currencies)!{
-                    currencyVMs.append(CurrencyTableViewModel(currency))
+                    currencyVMs.append(CurrencyTableViewModel(currency: currency))
                 }
                 currencyVMs.sortInPlace({ (curt1, curt2) -> Bool in
                     curt1.order < curt2.order
@@ -49,5 +49,16 @@ class CbrCurrViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("CbrCurr") as! CurrencyTableViewCell
         cell.viewModel = currencies[indexPath.row]
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toConvert" {
+            let buttonPosition = sender?.convertPoint(CGPoint(), toView: self.tableView)
+            if let index = self.tableView.indexPathForRowAtPoint(buttonPosition!) {
+                let viewController = segue.destinationViewController as! ConvertorViewController
+                let curr = self.currencies[index.row]
+                viewController.convertVM = ConvertViewModel(curr.currency)
+            }
+        }
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ExchangeViewModel {
+    var exchange:Exchange{ get }
     var bank:    String  { get }
     var usdSell: Float32 { get }
     var usdBuy:  Float32 { get }
