@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cuV-wx-q5K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cuV-wx-q5K">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -16,8 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="tintColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="barTintColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.055765025039999999" green="0.1478823158" blue="0.040080814190000001" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="textShadowColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -72,25 +70,43 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwe-Ax-eGK">
+                                            <rect key="frame" x="0.0" y="70" width="600" height="48.5"/>
+                                            <color key="backgroundColor" red="0.97390379581151831" green="0.97390379581151831" blue="0.97390379581151831" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ9-vb-JN4">
                                             <rect key="frame" x="559" y="80" width="33" height="33"/>
                                             <state key="normal" image="exchange"/>
                                             <state key="highlighted" image="exchange_on"/>
                                             <connections>
-                                                <segue destination="cNi-v8-aeO" kind="show" identifier="toConvert" id="gW1-6O-aJW"/>
+                                                <segue destination="cNi-v8-aeO" kind="showDetail" identifier="toConvert" action="showViewController:sender:" id="gW1-6O-aJW"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7i-tk-yzL">
+                                            <rect key="frame" x="505" y="80" width="33" height="33"/>
+                                            <state key="normal" image="line_chart"/>
+                                            <state key="highlighted" image="line_chart_on"/>
+                                            <connections>
+                                                <segue destination="Czi-lZ-wUF" kind="show" identifier="ShowChart" id="zYT-Gf-1hm"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="cQ9-vb-JN4" firstAttribute="leading" secondItem="h7i-tk-yzL" secondAttribute="trailing" constant="21" id="26Q-pA-AKF"/>
                                         <constraint firstItem="Acc-aV-aoD" firstAttribute="top" secondItem="Tvd-9c-6zA" secondAttribute="bottom" constant="10" id="BbM-6a-2ud"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="h7i-tk-yzL" secondAttribute="bottom" constant="-2.5" id="IF6-1x-xwU"/>
                                         <constraint firstItem="Tvd-9c-6zA" firstAttribute="trailing" secondItem="aO5-OW-S0Z" secondAttribute="trailingMargin" id="KsA-X8-orL"/>
                                         <constraint firstItem="Acc-aV-aoD" firstAttribute="trailing" secondItem="aO5-OW-S0Z" secondAttribute="trailingMargin" id="O3m-M8-68R"/>
                                         <constraint firstItem="Tvd-9c-6zA" firstAttribute="top" secondItem="aO5-OW-S0Z" secondAttribute="topMargin" id="U0k-7y-1PQ"/>
                                         <constraint firstItem="cQ9-vb-JN4" firstAttribute="top" secondItem="Acc-aV-aoD" secondAttribute="bottom" constant="16" id="XBr-lt-TN0"/>
+                                        <constraint firstItem="h7i-tk-yzL" firstAttribute="top" secondItem="nwe-Ax-eGK" secondAttribute="bottom" constant="-38.5" id="m4A-ug-iVg"/>
+                                        <constraint firstItem="nwe-Ax-eGK" firstAttribute="trailing" secondItem="aO5-OW-S0Z" secondAttribute="trailingMargin" constant="8" id="pn5-pk-fpn"/>
+                                        <constraint firstItem="nwe-Ax-eGK" firstAttribute="leading" secondItem="aO5-OW-S0Z" secondAttribute="leadingMargin" constant="-8" id="q3B-cM-9YN"/>
                                         <constraint firstItem="cQ9-vb-JN4" firstAttribute="trailing" secondItem="aO5-OW-S0Z" secondAttribute="trailingMargin" id="rlH-Cj-9Pg"/>
+                                        <constraint firstItem="nwe-Ax-eGK" firstAttribute="top" secondItem="Acc-aV-aoD" secondAttribute="bottom" constant="6" id="z8J-Ah-Yos"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="changedLabel" destination="Acc-aV-aoD" id="b8R-hO-fi7"/>
                                     <outlet property="charLabel" destination="NOt-Mk-Gtc" id="iq7-Gw-Zyw"/>
@@ -101,7 +117,7 @@
                         </prototypes>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" image="bag" selectedImage="bag" id="wly-Yf-tFf"/>
+                    <tabBarItem key="tabBarItem" title="Курсы ЦБ" image="bag" selectedImage="bag" id="wly-Yf-tFf"/>
                     <navigationItem key="navigationItem" title="Курсы ЦБ" id="YZE-AX-aso"/>
                     <value key="contentSizeForViewInPopover" type="size" width="600" height="551"/>
                 </viewController>
@@ -112,13 +128,13 @@
         <!--Convertor View Controller-->
         <scene sceneID="JdI-g2-oNJ">
             <objects>
-                <viewController id="cNi-v8-aeO" customClass="ConvertorViewController" customModule="Cours" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="cNi-v8-aeO" customClass="ConvertorViewController" customModule="Cours" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="imb-3x-Uob"/>
                         <viewControllerLayoutGuide type="bottom" id="SzG-Hc-diC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XXn-Uf-tGm">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 USD = 75.8674 RUB " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8I-AL-d7i">
@@ -205,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODr-fl-Pcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1629" y="2127"/>
+            <point key="canvasLocation" x="1625" y="2127"/>
         </scene>
         <!--Cours Controller-->
         <scene sceneID="vUO-fp-QQK">
@@ -219,40 +235,45 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="hvA-GL-iH6" kind="relationship" relationship="viewControllers" id="DDW-V7-SAp"/>
-                        <segue destination="CpW-Py-xQE" kind="relationship" relationship="viewControllers" id="SQs-Qj-Rbm"/>
+                        <segue destination="CpW-Py-xQE" kind="relationship" relationship="viewControllers" id="P0i-zj-7x7"/>
+                        <segue destination="hvA-GL-iH6" kind="relationship" relationship="viewControllers" id="u57-uj-2ry"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHB-cc-dqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-698" y="1605"/>
+            <point key="canvasLocation" x="-700" y="1567"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="LQx-sH-c0a">
             <objects>
-                <viewController id="Czi-lZ-wUF" customClass="ChartViewController" customModule="Cours" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Czi-lZ-wUF" customClass="ChartViewController" customModule="Cours" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Li-YD-VyY"/>
                         <viewControllerLayoutGuide type="bottom" id="6aL-7i-io4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yZL-nC-Zp9" customClass="LineChartView" customModule="Charts">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zqX-l6-i0Y">
+                        <barButtonItem key="backBarButtonItem" title="sdfsf" style="plain" id="ZGC-sN-azj">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="chartView" destination="yZL-nC-Zp9" id="jl9-7N-sDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmW-k9-BeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912" y="849"/>
+            <point key="canvasLocation" x="2085" y="837"/>
         </scene>
-        <!--Курс ЦБ-->
+        <!--Navigation Controller-->
         <scene sceneID="Onf-HO-esa">
             <objects>
-                <navigationController title="Курс ЦБ" id="CpW-Py-xQE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1nh-iM-gTg"/>
+                <navigationController id="CpW-Py-xQE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" id="1nh-iM-gTg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="XIe-Gd-2xF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -262,10 +283,6 @@
                             <color key="textShadowColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                         </textAttributes>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="4YF-NT-s5P">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="X6R-xH-lmG"/>
                     </connections>
@@ -406,18 +423,21 @@
                         </prototypes>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" image="bag" selectedImage="bag" id="HmE-fj-xmd"/>
+                    <tabBarItem key="tabBarItem" title="Курсы банков" image="banknote" selectedImage="banknote" id="HmE-fj-xmd"/>
                     <navigationItem key="navigationItem" title="Курсы банков" id="xVO-JD-3Mm"/>
                     <value key="contentSizeForViewInPopover" type="size" width="600" height="551"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phu-Cl-ovR" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="849"/>
+            <point key="canvasLocation" x="964" y="837"/>
         </scene>
     </scenes>
     <resources>
         <image name="bag" width="33" height="33"/>
+        <image name="banknote" width="33" height="33"/>
         <image name="exchange" width="33" height="33"/>
         <image name="exchange_on" width="33" height="33"/>
+        <image name="line_chart" width="33" height="33"/>
+        <image name="line_chart_on" width="33" height="33"/>
     </resources>
 </document>

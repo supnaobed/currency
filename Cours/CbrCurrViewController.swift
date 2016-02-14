@@ -17,7 +17,10 @@ class CbrCurrViewController: UITableViewController {
     let stringURL = "http://188.166.47.132:8080/cbr/daily"
     
     var currencies = [CurrencyTableViewModel]()
-
+    var charcode = String!()
+    var startdate = String!()
+    var enddate = String!()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         _ = requestJSON(Method.GET, stringURL)
@@ -39,6 +42,19 @@ class CbrCurrViewController: UITableViewController {
                     self.tableView.reloadData()
                 }
         }
+        
+        
+        let calendar = NSCalendar.currentCalendar()
+        let daysAgo = calendar.dateByAddingUnit(.Day, value: -10, toDate: NSDate(), options: [])
+        let date = calendar.dateByAddingUnit(.Day, value: 0, toDate: NSDate(), options: [])
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd.MM.YYYY"
+        let dateString = dateFormatter.stringFromDate(daysAgo!)
+        let currnetDateString = dateFormatter.stringFromDate(date!)
+        
+        self.charcode = "USD"
+        self.startdate = dateString
+        self.enddate = currnetDateString
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,6 +75,17 @@ class CbrCurrViewController: UITableViewController {
                 let curr = self.currencies[index.row]
                 viewController.convertVM = ConvertViewModel(curr.currency)
             }
+        } else if segue.identifier == "ShowChart" {
+            let buttonPosition = sender?.convertPoint(CGPoint(), toView: self.tableView)
+            if let index = self.tableView.indexPathForRowAtPoint(buttonPosition!) {
+                let curr = self.currencies[index.row]
+                let chartVC = segue.destinationViewController as! ChartViewController
+                chartVC.charcode = curr.charCode
+                chartVC.startdate = self.startdate
+                chartVC.enddate = self.enddate
+            }
+            
         }
+        
     }
 }

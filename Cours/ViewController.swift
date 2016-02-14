@@ -17,10 +17,6 @@ class ViewController: UITableViewController {
     let stringURL = "http://188.166.47.132:8080/exchange/last"
     
     var exchangies = [ExchangeTableViewModel]()
-    
-    var charcode = String!()
-    var startdate = String!()
-    var enddate = String!()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,17 +37,7 @@ class ViewController: UITableViewController {
                 }
                 
         }
-        
-        let calendar = NSCalendar.currentCalendar()
-        let daysAgo = calendar.dateByAddingUnit(.Day, value: -10, toDate: NSDate(), options: [])
-        let date = calendar.dateByAddingUnit(.Day, value: 0, toDate: NSDate(), options: [])
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd.MM.YYYY"
-        let dateString = dateFormatter.stringFromDate(daysAgo!)
-        let currnetDateString = dateFormatter.stringFromDate(date!)
-        self.charcode = "USD"
-        self.startdate = dateString
-        self.enddate = currnetDateString
+
         
     }
     
@@ -69,11 +55,6 @@ class ViewController: UITableViewController {
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowChart" {
-            let chartVC = segue.destinationViewController as! ChartViewController
-            chartVC.charcode = self.charcode
-            chartVC.startdate = self.startdate
-            chartVC.enddate = self.enddate
-        }
+
     }
 }
