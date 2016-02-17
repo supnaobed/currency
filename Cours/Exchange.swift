@@ -8,21 +8,22 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-public class Exchange: Mappable {
-    var bank: String!
-    var usdBuy: Float!
-    var usdSell: Float!
-    var euroBuy: Float!
-    var euroSell: Float!
-    var url: String!
+public class Exchange: Object, Mappable {
+    dynamic var bank: String = ""
+    dynamic var usdBuy: Float = 0.0
+    dynamic var usdSell: Float = 0.0
+    dynamic var euroBuy: Float = 0.0
+    dynamic var euroSell: Float = 0.0
+    dynamic var url: String = ""
     
-    public init?() {
-        // Empty Constructor
-    }
-    
-    required public init?(_ map: Map) {
-        mapping(map)
+//    public init?() {
+//        // Empty Constructor
+//    }
+//    
+    required convenience public init?(_ map: Map) {
+        self.init()
     }
     
     public func mapping(map: Map) {

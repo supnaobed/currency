@@ -11,6 +11,7 @@ import Alamofire
 import RxSwift
 import RxAlamofire
 import ObjectMapper
+import RealmSwift
 
 class ViewController: UITableViewController {
 
@@ -20,24 +21,26 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = requestJSON(Method.GET, stringURL)
-            .observeOn(MainScheduler.sharedInstance)
-            .flatMap{ request -> Observable<([ExchangeTableViewModel])> in
-                let exchangeList = Mapper<ExchangeList>().map(request.1)
-                var exvhangeVMs = [ExchangeTableViewModel]()
-                for exchange in (exchangeList?.exchangies)!{
-                    exvhangeVMs.append(ExchangeTableViewModel(exchange))
+        if (true){
+            _ = Data.getExchangeList()
+                .observeOn(MainScheduler.sharedInstance)
+                .flatMap{ exchangeList -> Observable<([ExchangeTableViewModel])> in
+                    var exvhangeVMs = [ExchangeTableViewModel]()
+                    for exchange in (exchangeList.exchangies){
+                        exvhangeVMs.append(ExchangeTableViewModel(exchange))
+                    }
+                    return just(exvhangeVMs)
                 }
-                return just(exvhangeVMs)
-            }
-            .subscribe {
-                if $0.element != nil {
-                    self.exchangies = ($0.element)!
-                    self.tableView.reloadData()
+                .subscribe {
+                    if $0.element != nil {
+                        print(Realm.Configuration.defaultConfiguration.path!)
+                        self.exchangies = ($0.element)!
+                        self.tableView.reloadData()
+                    }
                 }
-                
+        }else{
+            
         }
-
         
     }
     

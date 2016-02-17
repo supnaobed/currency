@@ -14,6 +14,8 @@
 		525575441C43D87400713659 /* CurrencyTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525575431C43D87400713659 /* CurrencyTableViewModel.swift */; };
 		525575461C43D9F700713659 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525575451C43D9F700713659 /* CurrencyTableViewCell.swift */; };
 		525575481C43DF6300713659 /* CbrCurrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525575471C43DF6300713659 /* CbrCurrViewController.swift */; };
+		52574EBA1C74D7A800707AE0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52574EB91C74D7A800707AE0 /* Data.swift */; };
+		52574EBC1C74DE0600707AE0 /* ArrayTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52574EBB1C74DE0600707AE0 /* ArrayTransform.swift */; };
 		5257B4911C46AC050047986B /* ConvertorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257B4901C46AC040047986B /* ConvertorViewController.swift */; };
 		5270EB061C024B990034C6F3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5270EB021C024B990034C6F3 /* Alamofire.framework */; };
 		5270EB071C024B990034C6F3 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5270EB031C024B990034C6F3 /* RxBlocking.framework */; };
@@ -34,6 +36,7 @@
 		52B3BE2D1C0CE2EB007BF7AD /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3BE2C1C0CE2EB007BF7AD /* ChartViewController.swift */; };
 		52B3BE2F1C0CE83D007BF7AD /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3BE2E1C0CE83D007BF7AD /* Currency.swift */; };
 		52B3BE311C0CE9EE007BF7AD /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B3BE301C0CE9EE007BF7AD /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		52D89F351C72578F00D9DBAD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D89F341C72578F00D9DBAD /* RealmSwift.framework */; };
 		52DAEA0A1C4C00A30003EA95 /* ConvertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAEA091C4C00A30003EA95 /* ConvertViewModel.swift */; };
 		52F17FC31C0E3ACC005316DB /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F17FC21C0E3ACC005316DB /* Charts.framework */; };
 		6C187A8CB4BC5DC3C31EEC33 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A0E4112BD6122259C1A63A /* Pods.framework */; };
@@ -48,6 +51,8 @@
 		525575431C43D87400713659 /* CurrencyTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewModel.swift; sourceTree = "<group>"; };
 		525575451C43D9F700713659 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		525575471C43DF6300713659 /* CbrCurrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CbrCurrViewController.swift; sourceTree = "<group>"; };
+		52574EB91C74D7A800707AE0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		52574EBB1C74DE0600707AE0 /* ArrayTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTransform.swift; sourceTree = "<group>"; };
 		5257B4901C46AC040047986B /* ConvertorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertorViewController.swift; sourceTree = "<group>"; };
 		5270EB021C024B990034C6F3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		5270EB031C024B990034C6F3 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = "Pods/../build/Debug-iphoneos/RxBlocking.framework"; sourceTree = "<group>"; };
@@ -70,6 +75,7 @@
 		52B3BE2C1C0CE2EB007BF7AD /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		52B3BE2E1C0CE83D007BF7AD /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		52B3BE301C0CE9EE007BF7AD /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		52D89F341C72578F00D9DBAD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift.framework"; sourceTree = "<group>"; };
 		52DAEA091C4C00A30003EA95 /* ConvertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertViewModel.swift; sourceTree = "<group>"; };
 		52F17FC21C0E3ACC005316DB /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
 		A46E2CEB936BB82BF4262E7C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D89F351C72578F00D9DBAD /* RealmSwift.framework in Frameworks */,
 				52F17FC31C0E3ACC005316DB /* Charts.framework in Frameworks */,
 				52B3BE311C0CE9EE007BF7AD /* SwiftyJSON.framework in Frameworks */,
 				5270EB061C024B990034C6F3 /* Alamofire.framework in Frameworks */,
@@ -97,6 +104,7 @@
 		1FDDB13030A2F1467AED9A41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52D89F341C72578F00D9DBAD /* RealmSwift.framework */,
 				52F17FC21C0E3ACC005316DB /* Charts.framework */,
 				52B3BE301C0CE9EE007BF7AD /* SwiftyJSON.framework */,
 				5270EB021C024B990034C6F3 /* Alamofire.framework */,
@@ -126,6 +134,15 @@
 				5280DF091C024816006714DA /* AppDelegate.swift */,
 			);
 			name = other;
+			sourceTree = "<group>";
+		};
+		52574EB81C74D77700707AE0 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				52574EB91C74D7A800707AE0 /* Data.swift */,
+				52574EBB1C74DE0600707AE0 /* ArrayTransform.swift */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 		5270EB0A1C0254DA0034C6F3 /* models */ = {
@@ -162,6 +179,7 @@
 		5280DF081C024816006714DA /* Cours */ = {
 			isa = PBXGroup;
 			children = (
+				52574EB81C74D77700707AE0 /* utils */,
 				523C07FE1C3E941600BC7CA3 /* other */,
 				5283A9231C0B649700CF43AD /* views */,
 				5283A9201C0B627500CF43AD /* viewmodels */,
@@ -327,8 +345,10 @@
 				525575461C43D9F700713659 /* CurrencyTableViewCell.swift in Sources */,
 				5283A9251C0B64B400CF43AD /* ExchangeViewModel.swift in Sources */,
 				5283A91F1C0B5A0400CF43AD /* ExchangeList.swift in Sources */,
+				52574EBA1C74D7A800707AE0 /* Data.swift in Sources */,
 				525575441C43D87400713659 /* CurrencyTableViewModel.swift in Sources */,
 				5283A91D1C0B58DB00CF43AD /* Exchange.swift in Sources */,
+				52574EBC1C74DE0600707AE0 /* ArrayTransform.swift in Sources */,
 				52A78E6B1C4D4E2700A917E3 /* ConverDelegat.swift in Sources */,
 				522F05961C0CF2AD007E4048 /* MapCurrency.swift in Sources */,
 				52B3BE2D1C0CE2EB007BF7AD /* ChartViewController.swift in Sources */,

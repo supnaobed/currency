@@ -8,23 +8,21 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-public class ExchangeList: Mappable{
+public class ExchangeList: Object, Mappable{
     
-    var time: Int64!
-    var exchangies: [Exchange]!
+    dynamic var time = 0
+    var exchangies = List<Exchange>()
     
-    public init?(){
-        
-    }
-    
-    required public init?(_ map :Map){
-        mapping(map)
+    required convenience public init?(_ map: Map) {
+        self.init()
     }
     
     public func mapping(map: Map) {
         time <- map["time"];
-        exchangies <- map["exchangeList"];
+        exchangies <- (map["exchangeList"], ArrayTransform<Exchange>())
+
     }
     
     
