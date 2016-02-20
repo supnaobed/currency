@@ -21,7 +21,7 @@ class ExchangeTableViewModel: ExchangeViewModel {
         self.exchange = exchange
         self.bank = exchange.bank
         self.usdSell = exchange.usdSell
-        self.usdBuy = exchange.usdSell
+        self.usdBuy = exchange.usdBuy
         self.eurBuy = exchange.euroBuy
         self.eurSell = exchange.euroSell
     }

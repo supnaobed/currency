@@ -12,7 +12,7 @@ import RealmSwift
 
 public class ExchangeList: Object, Mappable{
     
-    dynamic var time = 0
+    dynamic var time: Int = 0
     var exchangies = List<Exchange>()
     
     required convenience public init?(_ map: Map) {

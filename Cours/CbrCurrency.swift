@@ -8,24 +8,21 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-public class CbrCurrency: Mappable{
+public class CbrCurrency: Object, Mappable{
     
-    var id: String!
-    var name: String!
-    var charCode: String!
-    var nominal: Int!
-    var value: Float!
-    var numCode: Int!
-    var changed: Float!
-    var order: Int!
+    dynamic var id: String = ""
+    dynamic var name: String = ""
+    dynamic var charCode: String = ""
+    dynamic var nominal: Int = 0
+    dynamic var value: Float = 0
+    dynamic var numCode: Int = 0
+    dynamic var changed: Float = 0
+    dynamic var order: Int = 0
     
-    public init?() {
-        // Empty Constructor
-    }
-    
-    required public init?(_ map: Map) {
-        mapping(map)
+    required convenience public init?(_ map: Map) {
+        self.init()
     }
     
     public func mapping(map: Map) {

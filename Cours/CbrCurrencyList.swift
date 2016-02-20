@@ -8,21 +8,18 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-public class CbrCurrencyList: Mappable{
-    var date: Int64!
-    var currencies: [CbrCurrency]!
+public class CbrCurrencyList: Object, Mappable{
+    dynamic var time: Int = 0
+    var currencies = List<CbrCurrency>()
     
-    public init?(){
-        
-    }
-    
-    required public init?(_ map :Map){
-        mapping(map)
+    required convenience public init?(_ map: Map) {
+        self.init()
     }
     
     public func mapping(map: Map) {
-        date       <- map["date"];
-        currencies <- map["currencies"];
+        time       <- map["date"];
+        currencies <- (map["currencies"], ArrayTransform<CbrCurrency>())
     }
 }
